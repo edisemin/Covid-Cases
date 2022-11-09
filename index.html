@@ -1,0 +1,91 @@
+﻿<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>COVID Cases</title>
+  </head>
+
+  <body>
+    <h1 class="title">Query COVID Cases</h1>
+    <form class="user-input" id="main-form">
+      <label for="month">Select Month and Data Interval to Query:</label><br />
+      <select id="month" name="month">
+        <option value="all">All Months</option>
+        <option value="jan">January</option>
+        <option value="feb">February</option>
+        <option value="mar">March</option>
+        <option value="apr">April</option>
+        <option value="may">May</option>
+        <option value="jun">June</option>
+        <option value="jul">July</option>
+        <option value="aug">August</option>
+        <option value="sep">September</option>
+        <option value="oct">October</option>
+        <option value="nov">November</option>
+        <option value="dec">December</option></select
+      ><br />
+
+      <select id="data-interval" name="data-interval">
+        <option value="daily">Daily</option>
+        <option value="monthly">Monthly</option></select
+      ><br />
+
+      <label for="specific-date">Alternatively Enter a Date to Query:</label
+      ><br />
+      <input
+        type="text"
+        id="specific-date"
+        name="specific-date"
+        placeholder="Enter date in yyyy-mm-dd format"
+      /><br />
+
+      <div class="radio-buttons">
+        <label class="container"
+          >Equal
+          <input type="radio" name="radio" id="specific-date-equal" />
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="container"
+          >More than
+          <input type="radio" name="radio" id="specific-date-more" />
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="container"
+          >Less than
+          <input type="radio" name="radio" id="specific-date-less" />
+          <span class="checkmark"></span>
+        </label>
+        <p id="error-message"></p>
+      </div>
+
+      <label for="top-10"
+        >Optionally select category to display top 10 days for in the selected
+        date range</label
+      ><br />
+      <select name="top-10" id="top-10">
+        <option value="none">None</option>
+        <option value="newCasesByPublishDate">Cases</option>
+        <option value="newPCRTestsByPublishDate">Tests</option>
+        <option value="plannedPCRCapacityByPublishDate">Test Capacity</option>
+        <option value="hospitalCases">Patients in Hospital</option></select
+      ><br />
+      <button type="button" id="button">submit</button>
+    </form>
+    <div class="table-wrapper">
+      <table class="fl-table" id="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Cases</th>
+            <th>Tests</th>
+            <th>Test Capacity</th>
+            <th>Patients In Hospital</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
