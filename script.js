@@ -38,14 +38,14 @@ const months = [
 function validateEnteredDate() {
   let enteredDate = specificDateEl.value;
 
-  var regEx = /^\d{4}-\d{2}-\d{2}$/;
+  let regEx = /^\d{4}-\d{2}-\d{2}$/;
   if (!enteredDate.match(regEx)) {
     specificDateEl.classList.add("error-input");
     errorMsgEl.textContent = "You must enter a date in yyyy-mm-dd format.";
     return false; // invalid format
   }
-  var d = new Date(enteredDate);
-  var dNum = d.getTime();
+  let d = new Date(enteredDate);
+  let dNum = d.getTime();
   if (!dNum && dNum !== 0) {
     specificDateEl.classList.add("error-input");
     errorMsgEl.textContent = `${enteredDate} is not a valid date.`;
@@ -302,7 +302,7 @@ function getXmlIdx(date, curIdx, xmlData) {
 }
 
 function loadXML(xmlFileName, xmlObjPropertyName) {
-  var xmlhttp = new XMLHttpRequest();
+  let xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       xmlObj[xmlObjPropertyName] = this;
